@@ -1,15 +1,11 @@
-# SPDX-FileCopyrightText: © 2022 Bonny Rais <bonnyr@gmail.com>
+# SPDX-FileCopyrightText: © 2022 Uri Shaked <uri@wokwi.com>
 # SPDX-License-Identifier: MIT
 
-SOURCES = src/24C01.chip.c 
-INCLUDES = -I . -I include
-CHIP_JSON = src/24C01.chip.json
-
-TARBALL  = dist/chip.tar.gz
+SOURCES = src/main.c
 TARGET  = dist/chip.wasm
 
 .PHONY: all
-all: clean $(TARBALL)
+all: $(TARGET) dist/chip.json
 
 .PHONY: clean
 clean:
@@ -18,12 +14,12 @@ clean:
 dist:
 		mkdir -p dist
 
-$(TARBALL): $(TARGET) dist/chip.json
-	ls -l dist
-	tar czf $(TARBALL) $(TARGET) dist/chip.json
+$(TARGET): dist $(SOURCES) src/wokwi-api.h
+	  clang --target=wasm32-unknown-wasi --sysroot /opt/wasi-libc -nostartfiles -Wl,--import-memory -Wl,--export-table -Wl,--no-entry -Werror -o $(TARGET) $(SOURCES)
 
-dist/chip.json:
-	cp $(CHIP_JSON) dist/chip.json
+dist/chip.json: dist chip.json
+	  cp chip.json dist
 
-$(TARGET): dist $(SOURCES)
-	  clang --target=wasm32-unknown-wasi --sysroot /opt/wasi-libc -nostartfiles -Wl,--import-memory -Wl,--export-table -Wl,--no-entry -Werror  $(INCLUDES) -o $(TARGET) $(SOURCES)
+.PHONY: test
+test:
+	  cd test && arduino-cli compile -e -b arduino:avr:uno blink

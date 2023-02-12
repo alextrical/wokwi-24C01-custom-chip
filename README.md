@@ -1,20 +1,19 @@
+# 24C01 EEPROM Chip example
 
-# 24C01 Custom Chip
+Example of a EEPROM custom chip for [Wokwi](https://wokwi.com/).
 
-- [todo - link to image]()
-- [chip data sheet](https://ww1.microchip.com/downloads/en/DeviceDoc/21201K.pdf)
+The actual source code for the chip lives in [src/main.c](src/main.c), and the pins are described in [chip.json](chip.json).
 
-The 24C01 Custom Chip simulates the Microchip chip of the same name. It provides 1K of serial eeprom.
+## Building
 
-The chip has the following pin groups
+The easiest way to build the project is to open it inside a Visual Studio Code dev container, and then run the `make` command.
 
-| Name         | Description                                            |
-| ------------ | ------------------------------------------------------ |
-| `A0-A2`        | Address pins. See [addressing](#adressing) below for more info    |
-| `VCC, GND`     | The usual power and ground pins                        |
-| `SCL, SDA`      | THe I2C pins. See [I2c](#i2c-comms) below for more info           |
-| `TEST`           | Output enable  pin - unused                       |
+## Testing
 
-## Simulator examples
+You can test this project using the [Wokwi extension for VS Code](https://marketplace.visualstudio.com/items?itemName=wokwi.wokwi-vscode). Open the project with Visual Studio Code, press "F1" and select "Wokwi: Start Simulator".
 
-- [24C01 Custom Chip](https://wokwi.com/projects/329482717479567954)
+If you want to make changes to the test project firmware, edit [test/blink/blink.ino](test/blink/blink.ino), and then run `make test` to rebuild the .hex file. You'll need the [arduino-cli](https://arduino.github.io/arduino-cli/latest/installation/), which is already installed in the dev container.
+
+## License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more details.

@@ -1,4 +1,11 @@
 {
-  "image": "wokwi/builder-clang-wasm",
-  "remoteUser": "root"
+  "name": "Wokwi-chips clang + Platform IO",
+	"dockerFile": "Dockerfile",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Wokwi.wokwi-vscode"
+			]
+		}
+	}
 }

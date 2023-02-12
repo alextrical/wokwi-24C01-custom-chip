@@ -1,8 +1,8 @@
 [wokwi]
 version = 1
-elf = 'test/release/firmware.elf'
-firmware = 'test/release/firmware.hex'
+elf = 'test/blink/build/arduino.avr.uno/blink.ino.elf'
+firmware = 'test/blink/build/arduino.avr.uno/blink.ino.hex'
 
 [[chip]]
-name = '24c01'
+name = 'inverter'
 binary = 'dist/chip.wasm'

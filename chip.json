@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "24C01",
+  "author": "Alextrical",
+  "license": "MIT",
+  "docs": "https://github.com/alextrical/wokwi-24C01-custom-chip/blob/main/docs/README.md",
+  "pins": [
+    "A0",
+    "A1",
+    "A2",
+    "GND",
+    "VCC",
+    "WP",
+    "SCL",
+    "SDA"
+  ]
+}

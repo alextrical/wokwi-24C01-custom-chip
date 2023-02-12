@@ -53,17 +53,10 @@ extern __attribute__((import_name("pinMode"))) void pin_mode(pin_t pin, uint32_t
 extern __attribute__((import_name("pinADCRead"))) float pin_adc_read(pin_t pin);
 extern __attribute__((import_name("pinDACWrite"))) float pin_dac_write(pin_t pin, float voltage);
 
-typedef uint32_t string_t;
-#define STRING_NULL 0
-
-extern __attribute__((import_name("stringGetLength"))) uint32_t string_get_length(string_t string);
-extern __attribute__((import_name("stringRead"))) uint32_t string_read(string_t string, char *buf, uint32_t buffer_size);
-
 extern __attribute__((import_name("attrInit"))) uint32_t attr_init(const char *name, uint32_t default_value);
-extern __attribute__((import_name("attrInitFloat"))) uint32_t attr_init_float(const char *name, float default_value);
+extern __attribute__((import_name("attrInit"))) uint32_t attr_init_float(const char *name, float default_value);
 extern __attribute__((import_name("attrRead"))) uint32_t attr_read(uint32_t attr_id);
 extern __attribute__((import_name("attrReadFloat"))) float attr_read_float(uint32_t attr_id);
-extern __attribute__((import_name("attrStringInit"))) string_t attr_string_init(const char *name);
 
 typedef struct {
   void *user_data;
