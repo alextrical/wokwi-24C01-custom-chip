@@ -42,8 +42,11 @@ jobs:
         env:
           ZIP_VERSION: ${{ github.ref_name }}
       - name: Upload release
-        uses: ncipollo/release-action@v1
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          artifacts: chip.zip
-          token: ${{ secrets.PUBLISH_TOKEN }}
-          generateReleaseNotes: true
+          repo_token: "${{ secrets.PUBLISH_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            chip.zip
