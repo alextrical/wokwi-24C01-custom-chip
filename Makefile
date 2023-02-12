@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: © 2022 Bonny Rais <bonnyr@gmail.com>
 # SPDX-License-Identifier: MIT
 
-SOURCES = src/pca9685.chip.c 
+SOURCES = src/24C01.chip.c 
 INCLUDES = -I . -I include
-CHIP_JSON = src/pca9685.chip.json
+CHIP_JSON = src/24C01.chip.json
 
 TARBALL  = dist/chip.tar.gz
 TARGET  = dist/chip.wasm
