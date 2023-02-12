@@ -1,0 +1,14 @@
+{
+    "name": "24C01",
+    "author": "Benny Meisels",
+    "pins": [
+      "A0",
+      "A1",
+      "A2",
+      "GND",
+      "VCC",
+      "WP",
+      "SCL",
+      "SDA"
+    ]
+  }

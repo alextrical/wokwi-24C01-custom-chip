@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "chip-eeprom-24lc256", "id": "chip1", "top": -20.53, "left": 349.69, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.1", "chip1:A1", "black", [ "v0" ] ],
+    [ "uno:GND.1", "chip1:A0", "black", [ "v0" ] ],
+    [ "uno:GND.1", "chip1:A2", "black", [ "v0" ] ],
+    [ "uno:GND.1", "chip1:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "chip1:VCC", "red", [ "v0" ] ],
+    [ "uno:GND.1", "chip1:WP", "black", [ "v0" ] ],
+    [ "chip1:SCL", "uno:A5.2", "green", [ "h0" ] ],
+    [ "uno:A4.2", "chip1:SDA", "green", [ "v0" ] ]
+  ]
+}
